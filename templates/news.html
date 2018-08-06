@@ -11,36 +11,28 @@
     <title>Hello, world!</title>
   </head>
   <body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		  <a class="navbar-brand" href="#">Choice News</a>
-		  
-
-		  <div class="collapse navbar-collapse" id="navbarSupportedContent">	
-		    <form class="col form-inline my-2 my-lg-0 align-self-end">
-		      <button class="btn btn-outline-success" type="submit"><a href="register.html">Registration<a></button>
-		    </form>
-		  </div>
-		</nav>
-	<div class="container">
-	<div class="row" style="margin-top:100px">
-		<div class="col-4"></div>
-		<div class="col-4">
-			<form>
-				  <div class="form-group">
-				    <label>Enter your Name</label>
-				    <input type="text" class="form-control" placeholder="Name">
-				  </div>
-				  <div class="form-group">
-				    <label>Enter Password</label>
-				    <input type="password" class="form-control" placeholder="password">
-				  </div>
-				<button type="button" class="btn btn-primary">Submit</button>
-				<button type="button" class="btn btn-danger">Clear</button>
-				</form>
-		</div>
-		<div class="col-4"></div>
-	</div>
-	</div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Choice News</a>
+    </nav>
+    <div class="container">
+            {%for i in range(ans[0]|length)%}
+    <div class="card" style="width: 100%; margin-top: 20px;">
+            <img class="card-img-top" src="{{ans[2][i]}}" alt="Card image cap" width="50%" height="50%">
+            <div class="card-body">
+              <h5 class="card-title">{{ans[0][i]}}</h5>
+              <p class="card-text">{{ans[1][i]}}</p>
+              <a href="{{ans[3][i]}}" class="btn btn-dark">Full News</a>
+            </div>
+          </div>
+        {%endfor%}
+    </div>
+    <!-- <div class="container">
+            {%for i in range(ans[0]|length)%}
+            <h3 class="alert alert-primary" role="alert"><div style="color:black;">Title</div> {{ans[0][i]}} </h3>
+            <h5 class="alert alert-warning" role="alert"><div style="color:black;">Description</div> {{ans[1][i]}} </h5>
+            {%endfor%}
+    </div> -->
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
